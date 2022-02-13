@@ -16,7 +16,7 @@ AdwHeaderBar.bitsdojo(
 )
 ```
 
-**Note**: This package will conflict `bitsdojo_windows` appWindow object, so only import one at a time. 
+**Note**: This package will conflict `bitsdojo_window` appWindow object, so either use this if you want cross compilation else use the original package. 
 
 ## Additional information
 
