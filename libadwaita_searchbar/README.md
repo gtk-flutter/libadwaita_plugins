@@ -7,7 +7,7 @@ bool searchedTerm = '';
 
 AdwSearchBar(
     suggestions: const ['Hi', 'Hello'],
-    onSubmitted: (str) => setState(() => searchedTerm.value = str),
+    onSubmitted: (str) => setState(() => searchedTerm = str),
     controller: const TextEditingController(),
 )
 ```
