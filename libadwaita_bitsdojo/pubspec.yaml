@@ -1,6 +1,6 @@
 name: libadwaita_bitsdojo
 description: A libadwaita package to get platformAppWindow object from 
-version: 0.5.0
+version: 0.5.1
 homepage: https://github.com/gtk-flutter/libadwaita_plugins/tree/main/libadwaita_bitsdojo
 
 environment:
