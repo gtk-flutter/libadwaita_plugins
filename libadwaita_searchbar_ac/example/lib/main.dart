@@ -2,7 +2,7 @@ import 'package:adwaita/adwaita.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:libadwaita/libadwaita.dart';
-import 'package:libadwaita_searchbar/libadwaita_searchbar.dart';
+import 'package:libadwaita_searchbar_ac/libadwaita_searchbar_ac.dart';
 
 void main() => runApp(const MyApp());
 
@@ -44,8 +44,9 @@ class MyHomePage extends HookWidget {
           ),
         ],
         title: toggleSearch.value
-            ? AdwSearchBar(
+            ? AdwSearchBarAc(
                 toggleSearchBar: toggleSearchBar,
+                suggestions: const ['Hi', 'Hello'],
                 onSubmitted: (str) => searchedTerm.value = str,
                 controller: _searchController,
               )

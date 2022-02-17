@@ -50,6 +50,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.7.1"
+  easy_autocomplete:
+    dependency: transitive
+    description:
+      name: easy_autocomplete
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.5.0"
   ffi:
     dependency: transitive
     description:
@@ -119,13 +126,18 @@ packages:
   libadwaita:
     dependency: "direct main"
     description:
-      path: "."
-      ref: fix46
-      resolved-ref: "412729d30cbf3edd43f0bd4e21fed276a40ad320"
-      url: "https://github.com/gtk-flutter/libadwaita"
-    source: git
-    version: "1.0.0"
+      name: libadwaita
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.2"
   libadwaita_searchbar:
+    dependency: transitive
+    description:
+      path: "../../libadwaita_searchbar"
+      relative: true
+    source: path
+    version: "0.5.2"
+  libadwaita_searchbar_ac:
     dependency: "direct main"
     description:
       path: ".."

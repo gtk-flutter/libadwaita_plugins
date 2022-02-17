@@ -1,4 +1,3 @@
-import 'package:easy_autocomplete/easy_autocomplete.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -8,25 +7,37 @@ class AdwSearchBar extends StatelessWidget {
     this.search = const Icon(Icons.search, size: 18),
     this.fillColor,
     this.controller,
-    this.suggestions,
     this.onChanged,
     this.onSubmitted,
     this.toggleSearchBar,
     this.hintText,
-    this.asyncSuggestions,
     this.constraints,
     this.outerConstraints,
-  }) : super(key: key);
+  })  : textField = null,
+        super(key: key);
 
-  final Widget search;
+  const AdwSearchBar.custom({
+    Key? key,
+    this.textField,
+    this.outerConstraints,
+  })  : constraints = null,
+        fillColor = null,
+        search = null,
+        toggleSearchBar = null,
+        hintText = null,
+        controller = null,
+        onSubmitted = null,
+        onChanged = null,
+        super(key: key);
+
+  final Widget? search;
+  final Widget? textField;
   final Color? fillColor;
   final String? hintText;
   final TextEditingController? controller;
   final Function({bool value})? toggleSearchBar;
-  final List<String>? suggestions;
   final ValueSetter<String>? onSubmitted;
   final ValueSetter<String>? onChanged;
-  final Future<List<String>> Function(String)? asyncSuggestions;
   final BoxConstraints? constraints;
   final BoxConstraints? outerConstraints;
 
@@ -45,35 +56,26 @@ class AdwSearchBar extends StatelessWidget {
             toggleSearchBar?.call(value: false);
           }
         },
-        child: EasyAutocomplete(
-          asyncSuggestions: asyncSuggestions,
-          suggestions: suggestions,
-          controller: controller,
-          autofocus: true,
-          decoration: InputDecoration(
-            constraints:
-                constraints ?? BoxConstraints.loose(const Size(500, 36)),
-            fillColor: fillColor ?? Theme.of(context).canvasColor,
-            contentPadding: const EdgeInsets.only(top: 8),
-            filled: true,
-            isDense: true,
-            hintText: hintText,
-            prefixIcon: search,
-            border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(6),
+        child: textField ??
+            TextField(
+              controller: controller,
+              autofocus: true,
+              decoration: InputDecoration(
+                constraints:
+                    constraints ?? BoxConstraints.loose(const Size(500, 36)),
+                fillColor: fillColor ?? Theme.of(context).canvasColor,
+                contentPadding: const EdgeInsets.only(top: 8),
+                filled: true,
+                isDense: true,
+                hintText: hintText,
+                prefixIcon: search,
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(6),
+                ),
+              ),
+              onChanged: onChanged,
+              onSubmitted: onSubmitted,
             ),
-          ),
-          onChanged: onChanged,
-          onSubmitted: onSubmitted,
-          suggestionBuilder: (data) => Container(
-            margin: const EdgeInsets.all(1),
-            padding: const EdgeInsets.all(5),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(5),
-            ),
-            child: Text(data),
-          ),
-        ),
       ),
     );
   }

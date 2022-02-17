@@ -5,7 +5,8 @@ A libadwaita package to get a search bar in your app, based on easy_autocomplete
 ```dart
 bool searchedTerm = '';
 
-AdwSearchBar(
+AdwSearchBarAc(
+    suggestions: const ['Hi', 'Hello'],
     onSubmitted: (str) => setState(() => searchedTerm = str),
     controller: const TextEditingController(),
 )

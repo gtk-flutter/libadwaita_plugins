@@ -1,0 +1,20 @@
+name: libadwaita_titlebar_buttons
+description: A libadwaita package for providing an extension to AdwControls for titlebar_buttons package
+version: 0.5.0
+homepage: https://github.com/gtk-flutter/libadwaita_plugins/tree/main/libadwaita_titlebar_buttons
+
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  libadwaita_core:
+    path: ../libadwaita_core
+  titlebar_buttons: ">=1.0.0 <2.0.0"
+
+dev_dependencies: 
+  very_good_analysis: ^2.4.0
+
+flutter:

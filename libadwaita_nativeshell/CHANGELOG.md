@@ -1,8 +1,3 @@
-## 0.5.2
-
-* Add support for libadwaita_core
-* Update docs
-
 ## 0.5.1
 
 * Relicense under MPL-2.0

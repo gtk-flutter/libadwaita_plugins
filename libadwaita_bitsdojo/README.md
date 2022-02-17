@@ -20,6 +20,6 @@ AdwHeaderBar.bitsdojo(
 
 ## Additional information
 
-This package is dependent on bitsdojo_window for providing the appWindow object, Hence when it gets updated then this package also needs to be updated.
+This package is dependent on `bitsdojo_window` for providing the appWindow object, Hence when it gets updated then this package also needs to be updated.
 
 This package is a part of [libadwaita](https://pub.dev/packages/libadwaita) package.

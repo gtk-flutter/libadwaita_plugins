@@ -5,7 +5,7 @@
 dependencies:
   adwaita:
   libadwaita:
-  libadwaita_bitsdojo:
+  libadwaita_titlebar_buttons:
 ```
 
 ```dart
@@ -14,7 +14,7 @@ dependencies:
 import 'package:adwaita/adwaita.dart';
 import 'package:flutter/material.dart';
 import 'package:libadwaita/libadwaita.dart';
-import 'package:libadwaita_bitsdojo/libadwaita_bitsdojo.dart';
+import 'package:libadwaita_titlebar_buttons/libadwaita_titlebar_buttons.dart';
 
 void main() => runApp(const MyApp());
 
@@ -39,16 +39,16 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return AdwScaffold(
       headerbar: (_) => AdwHeaderBar(
-        actions: AdwActions().bitsdojo,
+        controls: AdwControls().titlebarButtons(),
         start: const [
           AdwHeaderButton(
             icon: Icon(Icons.nightlight_round, size: 15),
           ),
         ],
-        title: const Text('Bitsdojo Window'),
+        title: const Text('Titlebar Buttons'),
       ),
       body: const Center(
-        child: Text('Welcome to Bitsdojo Window Example!'),
+        child: Text('Welcome to Titlebar Buttons Example!'),
       ),
     );
   }
