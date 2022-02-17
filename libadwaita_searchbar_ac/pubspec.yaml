@@ -3,8 +3,6 @@ description: A libadwaita package to get a search bar in your app, based on easy
 version: 0.5.0
 homepage: https://github.com/gtk-flutter/libadwaita_plugins/tree/main/libadwaita_searchbar_ac
 
-publish_to: none
-
 environment:
   sdk: ">=2.12.0 <3.0.0"
   flutter: ">=1.17.0"
@@ -13,8 +11,7 @@ dependencies:
   easy_autocomplete: ">=1.5.0 <2.0.0"
   flutter:
     sdk: flutter
-  libadwaita_searchbar:
-    path: ../libadwaita_searchbar/
+  libadwaita_searchbar: ">=0.5.2 <1.0.0"
 
 dev_dependencies:
   very_good_analysis: ^2.4.0
