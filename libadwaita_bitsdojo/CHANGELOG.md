@@ -1,3 +1,7 @@
+## 0.5.3
+
+* Fix version constraints
+
 ## 0.5.2
 
 * Add support for libadwaita_core
