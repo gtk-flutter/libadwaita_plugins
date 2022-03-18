@@ -18,7 +18,7 @@ class AdwSearchBarAc extends StatelessWidget {
     this.outerConstraints,
   }) : super(key: key);
 
-  final Widget search;
+  final Widget? search;
   final Color? fillColor;
   final String? hintText;
   final TextEditingController? controller;
