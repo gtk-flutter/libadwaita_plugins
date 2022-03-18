@@ -6,6 +6,7 @@ class AdwSearchBarAc extends StatelessWidget {
   const AdwSearchBarAc({
     Key? key,
     this.search = const Icon(Icons.search, size: 18),
+    this.padding,
     this.fillColor,
     this.controller,
     this.suggestions,
@@ -19,6 +20,7 @@ class AdwSearchBarAc extends StatelessWidget {
   }) : super(key: key);
 
   final Widget? search;
+  final EdgeInsets? padding;
   final Color? fillColor;
   final String? hintText;
   final TextEditingController? controller;
@@ -33,6 +35,7 @@ class AdwSearchBarAc extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AdwSearchBar.custom(
+      padding: padding,
       outerConstraints: outerConstraints,
       textField: EasyAutocomplete(
         asyncSuggestions: asyncSuggestions,

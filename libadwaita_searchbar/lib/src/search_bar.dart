@@ -5,7 +5,7 @@ class AdwSearchBar extends StatelessWidget {
   const AdwSearchBar({
     Key? key,
     this.search = const Icon(Icons.search, size: 18),
-    this.padding = const EdgeInsets.symmetric(horizontal: 12, vertical: 2),
+    this.padding,
     this.fillColor,
     this.controller,
     this.onChanged,
@@ -20,7 +20,7 @@ class AdwSearchBar extends StatelessWidget {
   const AdwSearchBar.custom({
     Key? key,
     this.textField,
-    this.padding = const EdgeInsets.symmetric(horizontal: 12, vertical: 2),
+    this.padding,
     this.outerConstraints,
   })  : constraints = null,
         fillColor = null,
@@ -33,7 +33,7 @@ class AdwSearchBar extends StatelessWidget {
         super(key: key);
 
   final Widget? search;
-  final EdgeInsets padding;
+  final EdgeInsets? padding;
   final Widget? textField;
   final Color? fillColor;
   final String? hintText;
@@ -47,7 +47,8 @@ class AdwSearchBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: padding,
+      padding:
+          padding ?? const EdgeInsets.symmetric(horizontal: 12, vertical: 2),
       color: Theme.of(context).appBarTheme.backgroundColor,
       constraints:
           outerConstraints ?? BoxConstraints.loose(const Size(500, 40)),

@@ -1,3 +1,7 @@
+## 0.5.3+1
+
+* Made padding nullable
+
 ## 0.5.3
 
 * Add padding parameter
