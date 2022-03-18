@@ -1,6 +1,6 @@
 name: libadwaita_searchbar_ac
 description: A libadwaita package to get a search bar in your app, based on easy_autocomplete
-version: 0.5.0+1
+version: 0.5.1
 homepage: https://github.com/gtk-flutter/libadwaita_plugins/tree/main/libadwaita_searchbar_ac
 
 environment:

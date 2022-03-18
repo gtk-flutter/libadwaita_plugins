@@ -1,3 +1,7 @@
+## 0.5.3
+
+* Add padding parameter
+
 ## 0.5.2
 
 * Split the project into libadwaita_searchbar_ac
