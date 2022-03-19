@@ -22,11 +22,11 @@ class AdwSearchBar extends StatelessWidget {
     this.textField,
     this.padding,
     this.outerConstraints,
-  })  : constraints = null,
-        fillColor = null,
-        search = null,
-        toggleSearchBar = null,
-        hintText = null,
+    this.constraints,
+    this.fillColor,
+    this.search,
+    this.hintText,
+  })  : toggleSearchBar = null,
         controller = null,
         onSubmitted = null,
         onChanged = null,
@@ -34,7 +34,7 @@ class AdwSearchBar extends StatelessWidget {
 
   final Widget? search;
   final EdgeInsets? padding;
-  final Widget? textField;
+  final Widget Function(InputDecoration)? textField;
   final Color? fillColor;
   final String? hintText;
   final TextEditingController? controller;
@@ -46,6 +46,19 @@ class AdwSearchBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final decoration = InputDecoration(
+      constraints: constraints ?? BoxConstraints.loose(const Size(500, 48)),
+      fillColor: fillColor ?? Theme.of(context).canvasColor,
+      contentPadding: const EdgeInsets.only(top: 8),
+      filled: true,
+      isDense: true,
+      hintText: hintText,
+      prefixIcon: search,
+      border: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(6),
+      ),
+    );
+
     return Container(
       padding:
           padding ?? const EdgeInsets.symmetric(horizontal: 12, vertical: 2),
@@ -60,23 +73,11 @@ class AdwSearchBar extends StatelessWidget {
             toggleSearchBar?.call(value: false);
           }
         },
-        child: textField ??
+        child: textField?.call(decoration) ??
             TextField(
               controller: controller,
               autofocus: true,
-              decoration: InputDecoration(
-                constraints:
-                    constraints ?? BoxConstraints.loose(const Size(500, 36)),
-                fillColor: fillColor ?? Theme.of(context).canvasColor,
-                contentPadding: const EdgeInsets.only(top: 8),
-                filled: true,
-                isDense: true,
-                hintText: hintText,
-                prefixIcon: search,
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(6),
-                ),
-              ),
+              decoration: decoration,
               onChanged: onChanged,
               onSubmitted: onSubmitted,
             ),

@@ -1,3 +1,7 @@
+## 0.5.4
+
+* Now decoration is passed with text field in custom
+
 ## 0.5.3+1
 
 * Made padding nullable

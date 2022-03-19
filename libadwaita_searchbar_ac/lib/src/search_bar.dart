@@ -37,23 +37,12 @@ class AdwSearchBarAc extends StatelessWidget {
     return AdwSearchBar.custom(
       padding: padding,
       outerConstraints: outerConstraints,
-      textField: EasyAutocomplete(
+      textField: (decoration) => EasyAutocomplete(
         asyncSuggestions: asyncSuggestions,
         suggestions: suggestions,
         controller: controller,
         autofocus: true,
-        decoration: InputDecoration(
-          constraints: constraints ?? BoxConstraints.loose(const Size(500, 36)),
-          fillColor: fillColor ?? Theme.of(context).canvasColor,
-          contentPadding: const EdgeInsets.only(top: 8),
-          filled: true,
-          isDense: true,
-          hintText: hintText,
-          prefixIcon: search,
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(6),
-          ),
-        ),
+        decoration: decoration,
         onChanged: onChanged,
         onSubmitted: onSubmitted,
         suggestionBuilder: (data) => Container(

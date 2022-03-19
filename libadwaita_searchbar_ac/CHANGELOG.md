@@ -1,3 +1,7 @@
+## 0.5.2
+
+* Use decoration from searchbar package
+
 ## 0.5.1
 
 * Add padding parameter
