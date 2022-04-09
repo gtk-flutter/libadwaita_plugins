@@ -13,7 +13,6 @@ class AdwSearchBar extends StatelessWidget {
     this.toggleSearchBar,
     this.hintText,
     this.constraints,
-    this.outerConstraints,
   })  : textField = null,
         super(key: key);
 
@@ -21,7 +20,6 @@ class AdwSearchBar extends StatelessWidget {
     Key? key,
     this.textField,
     this.padding,
-    this.outerConstraints,
     this.constraints,
     this.fillColor,
     this.search,
@@ -42,29 +40,27 @@ class AdwSearchBar extends StatelessWidget {
   final ValueSetter<String>? onSubmitted;
   final ValueSetter<String>? onChanged;
   final BoxConstraints? constraints;
-  final BoxConstraints? outerConstraints;
 
   @override
   Widget build(BuildContext context) {
     final decoration = InputDecoration(
       constraints: constraints ?? BoxConstraints.loose(const Size(500, 48)),
       fillColor: fillColor ?? Theme.of(context).canvasColor,
-      contentPadding: const EdgeInsets.only(top: 8),
+      contentPadding: search != null ? const EdgeInsets.only(top: 8) : null,
       filled: true,
       isDense: true,
       hintText: hintText,
       prefixIcon: search,
-      border: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(6),
-      ),
+      border: OutlineInputBorder(borderRadius: BorderRadius.circular(6)),
     );
 
     return Container(
-      padding:
-          padding ?? const EdgeInsets.symmetric(horizontal: 12, vertical: 2),
+      padding: padding ??
+          EdgeInsets.symmetric(
+            horizontal: 12,
+            vertical: search != null ? 2 : 4,
+          ),
       color: Theme.of(context).appBarTheme.backgroundColor,
-      constraints:
-          outerConstraints ?? BoxConstraints.loose(const Size(500, 40)),
       child: RawKeyboardListener(
         focusNode: FocusNode(),
         onKey: (event) {

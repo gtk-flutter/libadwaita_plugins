@@ -45,17 +45,18 @@ class MyHomePage extends HookWidget {
         ],
         title: toggleSearch.value
             ? AdwSearchBar(
+                search: null,
                 toggleSearchBar: toggleSearchBar,
                 onSubmitted: (str) => searchedTerm.value = str,
                 controller: _searchController,
               )
-            : const Text('Autocomplete demo'),
+            : const Text('Search bar demo'),
       ),
       body: Center(
         child: Text(
           searchedTerm.value.isNotEmpty
               ? searchedTerm.value
-              : 'Libadwaita + Easy autocomplete search bar demo',
+              : 'Libadwaita + Search bar demo',
         ),
       ),
     );

@@ -1,3 +1,11 @@
+## 0.5.6
+
+* Fix search bar style when search icon is null
+
+## 0.5.5
+
+* Fix errors
+
 ## 0.5.4
 
 * Now decoration is passed with text field in custom

@@ -131,7 +131,7 @@ packages:
       path: ".."
       relative: true
     source: path
-    version: "0.5.4"
+    version: "0.5.6"
   material_color_utilities:
     dependency: transitive
     description:

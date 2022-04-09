@@ -1,3 +1,7 @@
+## 0.5.3
+
+* Fix errors
+
 ## 0.5.2
 
 * Use decoration from searchbar package

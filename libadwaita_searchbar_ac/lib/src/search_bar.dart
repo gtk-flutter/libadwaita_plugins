@@ -16,7 +16,6 @@ class AdwSearchBarAc extends StatelessWidget {
     this.hintText,
     this.asyncSuggestions,
     this.constraints,
-    this.outerConstraints,
   }) : super(key: key);
 
   final Widget? search;
@@ -30,13 +29,15 @@ class AdwSearchBarAc extends StatelessWidget {
   final ValueSetter<String>? onChanged;
   final Future<List<String>> Function(String)? asyncSuggestions;
   final BoxConstraints? constraints;
-  final BoxConstraints? outerConstraints;
 
   @override
   Widget build(BuildContext context) {
     return AdwSearchBar.custom(
       padding: padding,
-      outerConstraints: outerConstraints,
+      search: search,
+      hintText: hintText,
+      fillColor: fillColor,
+      constraints: constraints,
       textField: (decoration) => EasyAutocomplete(
         asyncSuggestions: asyncSuggestions,
         suggestions: suggestions,
@@ -48,9 +49,7 @@ class AdwSearchBarAc extends StatelessWidget {
         suggestionBuilder: (data) => Container(
           margin: const EdgeInsets.all(1),
           padding: const EdgeInsets.all(5),
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(5),
-          ),
+          decoration: BoxDecoration(borderRadius: BorderRadius.circular(5)),
           child: Text(data),
         ),
       ),
