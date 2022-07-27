@@ -45,6 +45,11 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: AdwaitaThemeData.light(),
       darkTheme: AdwaitaThemeData.dark(),
+      builder: (context, child) {
+//    child = myBuilder(context,child);  // do something
+        child = DragToResizeArea(context, child!); 
+        return child;
+      },
       home: MyHomePage(),
     );
   }

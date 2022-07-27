@@ -11,11 +11,11 @@ Future<void> _maximizeOrRestore(WindowManager windowManager) async {
     return;
   }
 
-  await windowManager.restore();
+  await windowManager.unmaximize();
 }
 
 extension LibAdwWindowManager on AdwActions {
-  AdwActions windowManager() => AdwActions(
+  AdwActions get windowManager => AdwActions(
         onClose: WindowManager.instance.close,
         onMaximize: () => _maximizeOrRestore(WindowManager.instance),
         onMinimize: WindowManager.instance.minimize,
