@@ -1,3 +1,7 @@
+## 0.5.4
+
+* Update Documentation
+ 
 ## 0.5.3
 
 * Fix version constraints
