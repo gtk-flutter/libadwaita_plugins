@@ -42,7 +42,7 @@ packages:
       name: collection
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.15.0"
+    version: "1.16.0"
   dbus:
     dependency: transitive
     description:
@@ -122,7 +122,7 @@ packages:
       name: js
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.6.3"
+    version: "0.6.4"
   libadwaita:
     dependency: "direct main"
     description:
@@ -143,14 +143,14 @@ packages:
       path: ".."
       relative: true
     source: path
-    version: "0.5.6"
+    version: "0.5.6+1"
   material_color_utilities:
     dependency: transitive
     description:
       name: material_color_utilities
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.1.3"
+    version: "0.1.4"
   meta:
     dependency: transitive
     description:
@@ -351,7 +351,7 @@ packages:
       name: vector_math
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.1.1"
+    version: "2.1.2"
   very_good_analysis:
     dependency: "direct dev"
     description:
@@ -381,5 +381,5 @@ packages:
     source: hosted
     version: "5.3.1"
 sdks:
-  dart: ">=2.16.0-134.5.beta <3.0.0"
+  dart: ">=2.17.0-0 <3.0.0"
   flutter: ">=2.8.0"
