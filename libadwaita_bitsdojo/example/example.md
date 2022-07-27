@@ -16,7 +16,21 @@ import 'package:flutter/material.dart';
 import 'package:libadwaita/libadwaita.dart';
 import 'package:libadwaita_bitsdojo/libadwaita_bitsdojo.dart';
 
-void main() => runApp(const MyApp());
+void main() {
+  runApp(const MyApp());
+  doWhenWindowReady(() {
+    final win = appWindow!;
+    const initialSize = Size(400, 450);
+    const size = Size(1000, 600);
+
+    win
+      ..title = 'Example Bitsdojo'
+      ..size = size
+      ..alignment = Alignment.center
+      ..minSize = initialSize
+      ..show();
+  });
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -38,15 +52,13 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AdwScaffold(
-      headerbar: (_) => AdwHeaderBar(
-        actions: AdwActions().bitsdojo,
-        start: const [
-          AdwHeaderButton(
-            icon: Icon(Icons.nightlight_round, size: 15),
-          ),
-        ],
-        title: const Text('Bitsdojo Window'),
-      ),
+      actions: AdwActions().bitsdojo,
+      start: const [
+        AdwHeaderButton(
+          icon: Icon(Icons.nightlight_round, size: 15),
+        ),
+      ],
+      title: const Text('Bitsdojo Window'),
       body: const Center(
         child: Text('Welcome to Bitsdojo Window Example!'),
       ),

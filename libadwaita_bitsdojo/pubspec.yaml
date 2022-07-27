@@ -1,6 +1,6 @@
 name: libadwaita_bitsdojo
 description: A libadwaita package for providing an extension to AdwActions for bitsdojo_window package
-version: 0.5.3
+version: 0.5.4
 homepage: https://github.com/gtk-flutter/libadwaita_plugins/tree/main/libadwaita_bitsdojo
 
 environment:
@@ -8,13 +8,13 @@ environment:
   flutter: ">=1.17.0"
 
 dependencies:
-  bitsdojo_window_linux: ">=0.1.1 <2.0.0"
-  bitsdojo_window_macos: ">=0.1.0 <2.0.0"
-  bitsdojo_window_platform_interface: ">=0.1.0 <2.0.0"
-  bitsdojo_window_windows: ">=0.1.0 <2.0.0"
+  bitsdojo_window_linux: ">=0.1.2 <2.0.0"
+  bitsdojo_window_macos: ">=0.1.2 <2.0.0"
+  bitsdojo_window_platform_interface: ">=0.1.2 <2.0.0"
+  bitsdojo_window_windows: ">=0.1.2 <2.0.0"
   flutter:
     sdk: flutter
-  libadwaita_core: ">=0.5.0 <1.0.0"
+  libadwaita_core: ">=0.5.1 <1.0.0"
 
 dev_dependencies: 
   very_good_analysis: ^2.4.0

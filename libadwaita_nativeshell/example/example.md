@@ -50,15 +50,13 @@ class MainWindowState extends WindowState {
   Widget build(BuildContext context) {
     return WindowLayoutProbe(
       child: AdwScaffold(
-        headerbar: (_) => AdwHeaderBar(
-          actions: AdwActions().nativeshell(context),
-          start: const [
-            AdwHeaderButton(
-              icon: Icon(Icons.nightlight_round, size: 15),
-            ),
-          ],
-          title: const Text('Nativeshell'),
-        ),
+        actions: AdwActions().nativeshell(context),
+        start: const [
+          AdwHeaderButton(
+            icon: Icon(Icons.nightlight_round, size: 15),
+          ),
+        ],
+        title: const Text('Nativeshell'),
         body: const Center(
           child: Text('Welcome to NativeShell Example!'),
         ),

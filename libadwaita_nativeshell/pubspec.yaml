@@ -1,6 +1,6 @@
 name: libadwaita_nativeshell
 description: A libadwaita package for providing an extension to AdwActions for nativeshell package
-version: 0.5.1
+version: 0.5.2
 homepage: https://github.com/gtk-flutter/libadwaita_plugins/tree/main/libadwaita_nativeshell
 
 environment:

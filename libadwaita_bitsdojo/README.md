@@ -7,12 +7,12 @@ First import this package at the top of your dart file
 import 'package:libadwaita_bitsdojo/libadwaita_bitsdojo.dart';
 ```
 
-Then simply pass the `appWindow` object to the Bitsdojo's AdwHeaderBar
+Then simply pass it to the actions parameter of `AdwHeaderBar`
 
 ```dart
 AdwHeaderBar.bitsdojo(
-    appWindow: appWindow,
-    ...
+    actions: AdwActions().bitsdojo,
+//  ...
 )
 ```
 

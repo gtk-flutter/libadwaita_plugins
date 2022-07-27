@@ -7,7 +7,7 @@ First import this package at the top of your dart file
 import 'package:libadwaita_nativeshell/libadwaita_nativeshell.dart';
 ```
 
-Then simply pass it to the actions parameter of AdwHeaderBar
+Then simply pass it to the actions parameter of `AdwHeaderBar`
 
 ```dart
 AdwHeaderBar(
