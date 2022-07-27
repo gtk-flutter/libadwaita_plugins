@@ -6,6 +6,7 @@ dependencies:
   adwaita:
   libadwaita:
   libadwaita_nativeshell:
+  nativeshell:
 ```
 
 ```dart
