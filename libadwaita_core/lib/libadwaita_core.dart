@@ -2,7 +2,7 @@ library libadwaita_core;
 
 import 'package:flutter/material.dart';
 
-typedef AdwControlsWidget = Widget? Function(VoidCallback?)?;
+typedef AdwControlsWidget = Widget? Function(VoidCallback?);
 
 class AdwControls {
   AdwControls({
@@ -11,14 +11,14 @@ class AdwControls {
     this.minimizeBtn,
   });
 
-  final AdwControlsWidget closeBtn;
-  final AdwControlsWidget maximizeBtn;
-  final AdwControlsWidget minimizeBtn;
+  final AdwControlsWidget? closeBtn;
+  final AdwControlsWidget? maximizeBtn;
+  final AdwControlsWidget? minimizeBtn;
 
   AdwControls copyWith(
-    AdwControlsWidget closeBtn,
-    AdwControlsWidget maximizeBtn,
-    AdwControlsWidget minimizeBtn,
+    AdwControlsWidget? closeBtn,
+    AdwControlsWidget? maximizeBtn,
+    AdwControlsWidget? minimizeBtn,
   ) =>
       AdwControls(
         closeBtn: closeBtn ?? this.closeBtn,

@@ -1,3 +1,7 @@
+## 0.5.3
+
+* Fix nullable typedef
+
 ## 0.5.2
 
 * Add copyWith method
