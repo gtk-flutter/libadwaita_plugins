@@ -1,6 +1,6 @@
 name: libadwaita_core
 description: A libadwaita package for providing AdwControls and AdwActions for AdwHeaderBar
-version: 0.5.1+1
+version: 0.5.2
 repository: https://github.com/gtk-flutter/libadwaita_plugins/tree/main/libadwaita_core
 
 environment:
