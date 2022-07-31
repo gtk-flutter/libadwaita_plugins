@@ -1,3 +1,7 @@
+## 0.5.3
+
+* Fix support for web and mobile platforms
+
 ## 0.5.2
 
 * Add onRightClick method

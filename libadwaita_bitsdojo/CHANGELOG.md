@@ -1,3 +1,7 @@
+## 0.5.5
+
+* Update pubspec to show support for all platforms
+
 ## 0.5.4
 
 * Update Documentation

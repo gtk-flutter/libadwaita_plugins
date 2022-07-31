@@ -1,26 +1,35 @@
 library libadwaita_window_manager;
 
+import 'dart:io';
+
+import 'package:flutter/foundation.dart';
 import 'package:libadwaita_core/libadwaita_core.dart';
-import 'package:window_manager/window_manager.dart' as wm;
+import 'package:window_manager/window_manager.dart';
 export 'package:libadwaita_core/libadwaita_core.dart';
 
+final supportedPlatform =
+    !kIsWeb && (Platform.isLinux || Platform.isWindows || Platform.isMacOS);
+WindowManager? _windowManager = supportedPlatform ? windowManager : null;
+
 Future<void> _maximizeOrRestore() async {
-  final isMaximized = await wm.windowManager.isMaximized();
+  if (_windowManager == null) return;
+
+  final isMaximized = await _windowManager!.isMaximized();
   if (!isMaximized) {
-    await wm.windowManager.maximize();
+    await _windowManager?.maximize();
     return;
   }
 
-  await wm.windowManager.unmaximize();
+  await _windowManager?.unmaximize();
 }
 
 extension LibAdwWindowManager on AdwActions {
   AdwActions get windowManager => AdwActions(
-        onClose: wm.windowManager.close,
+        onClose: _windowManager?.close,
         onMaximize: _maximizeOrRestore,
-        onMinimize: wm.windowManager.minimize,
+        onMinimize: _windowManager?.minimize,
         onDoubleTap: _maximizeOrRestore,
-        onHeaderDrag: wm.windowManager.startDragging,
-        onRightClick: wm.windowManager.popUpWindowMenu,
+        onHeaderDrag: _windowManager?.startDragging,
+        onRightClick: _windowManager?.popUpWindowMenu,
       );
 }
