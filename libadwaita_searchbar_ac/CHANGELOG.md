@@ -1,3 +1,7 @@
+## 0.5.7
+
+* Update easy_autocomplete
+
 ## 0.5.3
 
 * Fix errors

@@ -56,7 +56,7 @@ packages:
       name: easy_autocomplete
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.5.0"
+    version: "1.6.0"
   ffi:
     dependency: transitive
     description:
@@ -143,7 +143,7 @@ packages:
       path: ".."
       relative: true
     source: path
-    version: "0.5.6+1"
+    version: "0.5.7"
   material_color_utilities:
     dependency: transitive
     description:
