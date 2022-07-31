@@ -1,25 +1,26 @@
 library libadwaita_window_manager;
 
 import 'package:libadwaita_core/libadwaita_core.dart';
-import 'package:window_manager/window_manager.dart';
+import 'package:window_manager/window_manager.dart' as wm;
 export 'package:libadwaita_core/libadwaita_core.dart';
 
-Future<void> _maximizeOrRestore(WindowManager windowManager) async {
-  final isMaximized = await windowManager.isMaximized();
+Future<void> _maximizeOrRestore() async {
+  final isMaximized = await wm.windowManager.isMaximized();
   if (!isMaximized) {
-    await windowManager.maximize();
+    await wm.windowManager.maximize();
     return;
   }
 
-  await windowManager.unmaximize();
+  await wm.windowManager.unmaximize();
 }
 
 extension LibAdwWindowManager on AdwActions {
   AdwActions get windowManager => AdwActions(
-        onClose: WindowManager.instance.close,
-        onMaximize: () => _maximizeOrRestore(WindowManager.instance),
-        onMinimize: WindowManager.instance.minimize,
-        onDoubleTap: () => _maximizeOrRestore(WindowManager.instance),
-        onHeaderDrag: WindowManager.instance.startDragging,
+        onClose: wm.windowManager.close,
+        onMaximize: _maximizeOrRestore,
+        onMinimize: wm.windowManager.minimize,
+        onDoubleTap: _maximizeOrRestore,
+        onHeaderDrag: wm.windowManager.startDragging,
+        onRightClick: wm.windowManager.popUpWindowMenu,
       );
 }

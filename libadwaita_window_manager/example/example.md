@@ -1,5 +1,6 @@
 ## Minimal usage
 
+- Add packages
 ```yaml
 #pubspec.yaml
 dependencies:
@@ -9,12 +10,15 @@ dependencies:
   window_manager:
 ```
 
+- Then modify `main` function and MaterialApp's `builder` function as follows
+
 ```dart
 // main.dart
 
 import 'package:adwaita/adwaita.dart';
 import 'package:flutter/material.dart';
 import 'package:libadwaita/libadwaita.dart';
+import 'package:libadwaita_window_manager/libadwaita_window_manager.dart';
 import 'package:window_manager/window_manager.dart';
 
 void main() async {
@@ -23,12 +27,13 @@ void main() async {
 
   WindowOptions windowOptions = WindowOptions(
     size: Size(1000, 600),
-    center: true,
     backgroundColor: Colors.transparent,
     skipTaskbar: false,
     titleBarStyle: TitleBarStyle.hidden,
   );
-  windowManager.waitUntilReadyToShow(windowOptions, () async {
+
+  await windowManager.waitUntilReadyToShow(windowOptions, () async {
+    await windowManager.setAsFrameless();
     await windowManager.show();
     await windowManager.focus();
   });
@@ -41,13 +46,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final virtualWindowFrameBuilder = VirtualWindowFrameInit();
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: AdwaitaThemeData.light(),
       darkTheme: AdwaitaThemeData.dark(),
       builder: (context, child) {
-//    child = myBuilder(context,child);  // do something
-        child = DragToResizeArea(context, child!); 
+      //child = myBuilder(context,child);  // do something
+        child = virtualWindowFrameBuilder(context, child);
         return child;
       },
       home: MyHomePage(),
@@ -61,7 +67,7 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AdwScaffold(
-      actions: AdwActions().windowManager(),
+      actions: AdwActions().windowManager,
       start: const [
           AdwHeaderButton(
           icon: Icon(Icons.nightlight_round, size: 15),

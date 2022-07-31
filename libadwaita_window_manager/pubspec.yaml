@@ -1,6 +1,6 @@
 name: libadwaita_window_manager
 description: A libadwaita package for providing an extension to AdwActions for window_manager package
-version: 0.5.1
+version: 0.5.2
 repository: https://github.com/gtk-flutter/libadwaita_plugins/tree/main/libadwaita_window_manager
 
 environment:
@@ -10,7 +10,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  libadwaita_core: ">= 0.5.1 <2.0.0"
+  libadwaita_core: ">= 0.5.2 <2.0.0"
   window_manager: ">= 0.2.5 <1.0.0"
 
 dev_dependencies:
