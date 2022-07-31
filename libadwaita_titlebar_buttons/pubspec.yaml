@@ -10,7 +10,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  libadwaita_core: ">=0.5.0 <1.0.0"
+  libadwaita_core: ">=0.5.3 <1.0.0"
   titlebar_buttons: ">=1.0.0 <2.0.0"
 
 dev_dependencies: 

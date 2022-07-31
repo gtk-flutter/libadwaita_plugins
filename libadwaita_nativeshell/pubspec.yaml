@@ -10,7 +10,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  libadwaita_core: ">=0.5.0 <1.0.0"
+  libadwaita_core: ">=0.5.3 <1.0.0"
   nativeshell: ">=0.1.13 <1.0.0"
 
 dev_dependencies: 

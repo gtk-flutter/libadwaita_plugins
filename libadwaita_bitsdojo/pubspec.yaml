@@ -14,7 +14,7 @@ dependencies:
   bitsdojo_window_windows: ">=0.1.2 <2.0.0"
   flutter:
     sdk: flutter
-  libadwaita_core: ">=0.5.1 <1.0.0"
+  libadwaita_core: ">=0.5.3 <1.0.0"
 
 dev_dependencies: 
   very_good_analysis: ^2.4.0
