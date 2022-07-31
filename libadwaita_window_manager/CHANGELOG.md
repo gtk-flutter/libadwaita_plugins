@@ -1,6 +1,10 @@
+## 0.5.4+1
+
+* Update Readme docs
+
 ## 0.5.4
 
-* Hide supportedPlatforms variable
+* Make supportedPlatforms a private variable
 
 ## 0.5.3
 

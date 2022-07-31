@@ -11,7 +11,7 @@ Then simply pass it to the actions parameter of `AdwHeaderBar`
 
 ```dart
 AdwHeaderBar(
-    actions: AdwActions().windowManager(),
+    actions: AdwActions().windowManager,
     ...
 )
 ```
