@@ -1,3 +1,7 @@
+## 0.5.4
+
+* Hide supportedPlatforms variable
+
 ## 0.5.3
 
 * Fix support for web and mobile platforms

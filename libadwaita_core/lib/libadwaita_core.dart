@@ -15,11 +15,11 @@ class AdwControls {
   final AdwControlsWidget? maximizeBtn;
   final AdwControlsWidget? minimizeBtn;
 
-  AdwControls copyWith(
+  AdwControls copyWith({
     AdwControlsWidget? closeBtn,
     AdwControlsWidget? maximizeBtn,
     AdwControlsWidget? minimizeBtn,
-  ) =>
+  }) =>
       AdwControls(
         closeBtn: closeBtn ?? this.closeBtn,
         maximizeBtn: maximizeBtn ?? this.maximizeBtn,
@@ -44,14 +44,14 @@ class AdwActions {
   final VoidCallback? onHeaderDrag;
   final VoidCallback? onRightClick;
 
-  AdwActions copyWith(
+  AdwActions copyWith({
     VoidCallback? onClose,
     VoidCallback? onMaximize,
     VoidCallback? onMinimize,
     VoidCallback? onDoubleTap,
     VoidCallback? onHeaderDrag,
     VoidCallback? onRightClick,
-  ) =>
+  }) =>
       AdwActions(
         onClose: onClose ?? this.onClose,
         onMaximize: onMaximize ?? this.onMaximize,

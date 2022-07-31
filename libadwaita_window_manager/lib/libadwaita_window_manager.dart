@@ -7,9 +7,9 @@ import 'package:libadwaita_core/libadwaita_core.dart';
 import 'package:window_manager/window_manager.dart';
 export 'package:libadwaita_core/libadwaita_core.dart';
 
-final supportedPlatform =
+final _supportedPlatform =
     !kIsWeb && (Platform.isLinux || Platform.isWindows || Platform.isMacOS);
-WindowManager? _windowManager = supportedPlatform ? windowManager : null;
+WindowManager? _windowManager = _supportedPlatform ? windowManager : null;
 
 Future<void> _maximizeOrRestore() async {
   if (_windowManager == null) return;

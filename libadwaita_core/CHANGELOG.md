@@ -1,3 +1,7 @@
+## 0.5.4
+
+* Fix copyWith
+
 ## 0.5.3
 
 * Fix nullable typedef
