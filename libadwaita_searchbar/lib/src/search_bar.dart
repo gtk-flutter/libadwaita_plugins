@@ -54,18 +54,20 @@ class AdwSearchBar extends StatelessWidget {
       border: OutlineInputBorder(borderRadius: BorderRadius.circular(6)),
     );
 
+    const _escKey = 4294967323;
+
     return Container(
       padding: padding ??
-          EdgeInsets.symmetric(
+          const EdgeInsets.symmetric(
             horizontal: 12,
-            vertical: search != null ? 2 : 4,
+            vertical: 2,
           ),
       color: Theme.of(context).appBarTheme.backgroundColor,
       child: RawKeyboardListener(
         focusNode: FocusNode(),
         onKey: (event) {
           if (event.runtimeType == RawKeyDownEvent &&
-              event.logicalKey.keyId == 4294967323) {
+              event.logicalKey.keyId == _escKey) {
             toggleSearchBar?.call(value: false);
           }
         },

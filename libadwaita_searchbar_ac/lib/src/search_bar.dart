@@ -16,6 +16,7 @@ class AdwSearchBarAc extends StatelessWidget {
     this.hintText,
     this.asyncSuggestions,
     this.constraints,
+    this.progressIndicatorBuilder,
   }) : super(key: key);
 
   final Widget? search;
@@ -29,6 +30,7 @@ class AdwSearchBarAc extends StatelessWidget {
   final ValueSetter<String>? onChanged;
   final Future<List<String>> Function(String)? asyncSuggestions;
   final BoxConstraints? constraints;
+  final Widget? progressIndicatorBuilder;
 
   @override
   Widget build(BuildContext context) {
@@ -46,6 +48,7 @@ class AdwSearchBarAc extends StatelessWidget {
         decoration: decoration,
         onChanged: onChanged,
         onSubmitted: onSubmitted,
+        progressIndicatorBuilder: progressIndicatorBuilder ?? SizedBox(),
         suggestionBuilder: (data) => Container(
           margin: const EdgeInsets.all(1),
           padding: const EdgeInsets.all(5),

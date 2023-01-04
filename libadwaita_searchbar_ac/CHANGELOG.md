@@ -1,3 +1,7 @@
+## 0.5.8
+
+* Add Progress Indicator field
+
 ## 0.5.7
 
 * Update easy_autocomplete

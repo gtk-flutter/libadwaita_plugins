@@ -1,3 +1,8 @@
+## 0.5.7
+
+* Fix default padding
+* No magic numbers in function
+
 ## 0.5.6
 
 * Fix search bar style when search icon is null

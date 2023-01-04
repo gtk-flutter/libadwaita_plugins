@@ -1,6 +1,6 @@
 name: libadwaita_searchbar
 description: A libadwaita package to get a search bar in your app, for autosuggestions use libadwaita_searchbar_ac
-version: 0.5.6+1
+version: 0.5.7
 repository: https://github.com/gtk-flutter/libadwaita_plugins/tree/main/libadwaita_searchbar
 
 environment:
